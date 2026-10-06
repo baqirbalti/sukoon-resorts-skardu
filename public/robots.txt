@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sukoon-resorts-skardu.vercel.app/sitemap.xml
