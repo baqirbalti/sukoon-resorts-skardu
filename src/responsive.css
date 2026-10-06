@@ -1,0 +1,299 @@
+/* ============================================================================
+   src/responsive.css — ⭐ DEVICE-WISE SIZES (Desktop / Tablet / Mobile alag alag) ⭐
+
+   Ye file har device ke liye alag alag size set karti hai. Aap ko sirf yahan numbers badalne hain.
+
+   DEVICES (breakpoints):
+     Desktop       : 1024px aur us se bari screen   (default values — pehla block)
+     Tablet        : 768px  se 1023px               (@media max-width:1023px)
+     Mobile        : 767px  aur us se choti         (@media max-width:767px)
+     Small mobile  : 480px  aur us se choti         (@media max-width:480px)
+
+   Kaise kaam karta hai:
+     1) Neeche "TOKENS" mein har size ka variable hai (D / T / M / XS ke liye alag value).
+        Jaise  --fs-h2: 42px (desktop), 34px (tablet), 28px (mobile), 26px (small mobile)
+     2) Components/pages mein sizes var(--fs-h2) ki tarah use hote hain, to ek variable badlo,
+        har jagah us device ke liye badal jata hai.
+     3) Layout (kitne columns, kab 1 column) "LAYOUT" section mein classes se hota hai.
+   Colours yahan nahi hain — wo theme.css mein hain.
+   ============================================================================ */
+
+/* ───────────────────────── TOKENS — DESKTOP (default) ───────────────────────── */
+:root {
+  /* Navbar */
+  --nav-h: 70px;            /* navbar ki height (mobile par hero iske neeche se shuru hota hai) */
+  --page-top: 80px;         /* har page ke upar khali jagah (fixed navbar ke liye) */
+  --nav-pad-x: 32px;  --nav-pad-y: 10px;  --nav-pad-y-top: 18px;
+  --logo-size: 44px;  --nav-gap: 26px;
+  --fs-nav-logo: 20px;  --ls-nav-logo: 1px;
+  --fs-menu: 34px;          /* mobile menu ke links */
+
+  /* Text sizes */
+  --fs-hero: 76px;  --fs-hero-sub: 16px;  --ls-hero-sub: 4px;
+  --fs-h1: 64px;            /* page ke bare titles (About, Gallery, Rooms, Contact, Amenities) */
+  --fs-h1-detail: 56px;     /* room detail page ka title */
+  --ls-title: 3px;          /* page titles ki letter-spacing */
+  --fs-h2-xl: 52px;         /* Welcome, Featured Rooms */
+  --fs-h2: 42px;            /* baqi section headings */
+  --fs-h2-sm: 38px;         /* Amenities rows, About design heading, Contact heading */
+  --fs-h3: 28px;            /* chhoti headings, forms ke titles */
+  --fs-card-title: 26px;    /* room card ka naam */
+  --fs-lead: 20px;          /* welcome subheading */
+  --fs-body: 16px;          /* bara paragraph */
+  --fs-body-sm: 15px;       /* normal paragraph */
+  --fs-stat: 40px;          /* About stats ke numbers */
+  --fs-infobox-title: 17px;
+
+  /* Spacing */
+  --section-py: 90px;       /* har section ka upar/neeche */
+  --section-px: 32px;       /* har section ka left/right */
+  --header-py: 70px;        /* dark page header (title wale banner) */
+  --strip-py: 40px;
+  --head-mb: 56px;          /* section heading ke neeche */
+  --row-gap: 90px;          /* Amenities page: do rows ke beech */
+  --gap-lg: 64px;           /* 2-column layouts ke beech */
+  --gap-md: 28px;           /* cards ke beech */
+  --pad-md-y: 60px;  --pad-md-x: 24px;   /* Contact page content */
+  --detail-py: 50px;        /* Room detail content */
+  --footer-py: 60px;  --footer-gap: 40px;  --footer-mb: 48px;
+  --filter-pt: 36px;
+  --btn-pad: 13px 36px;     /* .btn-gold / .btn-outline / .btn-whatsapp */
+  --chip-pad: 9px 22px;     /* filter buttons */
+  --card-pad: 28px 24px;    /* room card ke andar */
+  --card-pad-lg: 40px 32px; /* contact form card */
+  --infobox-pad: 24px;      /* room detail info boxes */
+  --amenity-pad: 32px 16px; /* home amenities cards */
+  --qb-pad: 24px 32px;      /* home quick-book box */
+  --modal-pad-y: 44px;  --modal-pad-x: 32px;   /* thank-you popup */
+  --review-pad: 32px;  --review-radius: 28px;
+  --img-shadow-x: 6px;      /* gold offset shadow behind images */
+
+  /* Hero / banners / map */
+  --hero-h: 100svh;  --hero-min-h: 500px;  --hero-mt: 0px;
+  --about-hero-h: 52vh;  --about-hero-min-h: 360px;
+  --room-hero-h: 45vh;   --room-hero-min-h: 300px;  --room-hero-px: 48px;
+  --map-h: 450px;
+  --welcome-ratio: auto;  --dining-ratio: auto;
+}
+
+/* ───────────────────────── TOKENS — TABLET (768 – 1023px) ───────────────────────── */
+@media (max-width: 1023px) {
+  :root {
+    --nav-pad-x: 24px;  --nav-pad-y: 10px;  --nav-pad-y-top: 16px;
+    --nav-gap: 22px;  --fs-nav-logo: 18px;  --fs-menu: 34px;
+
+    --fs-hero: 58px;  --fs-hero-sub: 14px;  --ls-hero-sub: 3px;
+    --fs-h1: 50px;  --fs-h1-detail: 46px;
+    --fs-h2-xl: 42px;  --fs-h2: 34px;  --fs-h2-sm: 32px;  --fs-h3: 26px;
+    --fs-card-title: 24px;  --fs-lead: 18px;  --fs-body: 15px;  --fs-body-sm: 14px;
+    --fs-stat: 36px;  --fs-infobox-title: 16px;
+
+    --section-py: 70px;  --section-px: 28px;  --header-py: 56px;  --strip-py: 32px;
+    --head-mb: 44px;  --row-gap: 64px;  --gap-lg: 40px;  --gap-md: 24px;
+    --pad-md-y: 52px;  --detail-py: 44px;
+    --footer-py: 50px;  --footer-gap: 36px;  --footer-mb: 40px;
+    --filter-pt: 30px;
+    --btn-pad: 13px 32px;  --chip-pad: 9px 20px;
+    --card-pad: 26px 22px;  --card-pad-lg: 36px 28px;  --infobox-pad: 22px;
+    --amenity-pad: 28px 14px;  --qb-pad: 24px 24px;
+    --review-pad: 28px;
+    --hero-h: 80svh;  --hero-min-h: 460px;
+    --about-hero-h: 46vh;  --about-hero-min-h: 340px;
+    --room-hero-h: 42vh;  --room-hero-min-h: 280px;  --room-hero-px: 40px;
+    --map-h: 400px;
+    --welcome-ratio: 16/9;
+  }
+}
+
+/* ───────────────────────── TOKENS — MOBILE (≤ 767px) ───────────────────────── */
+@media (max-width: 767px) {
+  :root {
+    --page-top: 76px;
+    --nav-pad-x: 16px;  --nav-pad-y: 12px;  --nav-pad-y-top: 12px;
+    --fs-nav-logo: 16px;  --ls-nav-logo: 0px;  --fs-menu: 32px;
+
+    --fs-hero: 38px;  --fs-hero-sub: 12px;  --ls-hero-sub: 2px;
+    --fs-h1: 34px;  --fs-h1-detail: 34px;  --ls-title: 2px;
+    --fs-h2-xl: 32px;  --fs-h2: 28px;  --fs-h2-sm: 26px;  --fs-h3: 24px;
+    --fs-card-title: 24px;  --fs-lead: 17px;  --fs-body: 15px;  --fs-body-sm: 14px;
+    --fs-stat: 34px;  --fs-infobox-title: 15px;
+
+    --section-py: 50px;  --section-px: 16px;  --header-py: 44px;  --strip-py: 28px;
+    --head-mb: 32px;  --row-gap: 48px;  --gap-lg: 28px;  --gap-md: 16px;
+    --pad-md-y: 40px;  --pad-md-x: 16px;  --detail-py: 32px;
+    --footer-py: 40px;  --footer-gap: 28px;  --footer-mb: 32px;
+    --filter-pt: 24px;
+    --btn-pad: 12px 24px;  --chip-pad: 8px 16px;
+    --card-pad: 20px 16px;  --card-pad-lg: 28px 20px;  --infobox-pad: 18px;
+    --amenity-pad: 20px 12px;  --qb-pad: 20px 16px;
+    --modal-pad-y: 32px;  --modal-pad-x: 20px;
+    --review-pad: 22px;  --review-radius: 22px;
+    --img-shadow-x: 4px;
+    --hero-h: 62svh;  --hero-min-h: 380px;  --hero-mt: var(--nav-h);
+    --about-hero-h: 42vh;  --about-hero-min-h: 300px;
+    --room-hero-h: 38vh;  --room-hero-min-h: 240px;  --room-hero-px: 20px;
+    --map-h: 320px;
+    --dining-ratio: 1/1;
+  }
+}
+
+/* ───────────────────────── TOKENS — SMALL MOBILE (≤ 480px) ───────────────────────── */
+@media (max-width: 480px) {
+  :root {
+    --page-top: 70px;  --nav-h: 64px;
+    --nav-pad-x: 14px;  --logo-size: 38px;  --fs-nav-logo: 14px;  --fs-menu: 28px;
+    --fs-hero: 32px;  --fs-hero-sub: 11px;
+    --fs-h1: 30px;  --fs-h1-detail: 30px;
+    --fs-h2-xl: 28px;  --fs-h2: 26px;  --fs-h2-sm: 24px;  --fs-h3: 22px;
+    --fs-card-title: 22px;  --fs-lead: 16px;  --fs-stat: 32px;
+    --section-py: 44px;  --header-py: 40px;  --head-mb: 28px;  --row-gap: 40px;  --gap-lg: 24px;
+    --footer-py: 36px;  --filter-pt: 20px;
+    --btn-pad: 12px 20px;  --chip-pad: 7px 12px;
+    --card-pad: 18px 14px;  --card-pad-lg: 24px 16px;  --infobox-pad: 16px;
+    --modal-pad-y: 28px;  --modal-pad-x: 16px;
+    --review-pad: 20px;  --review-radius: 20px;
+    --hero-h: 58svh;  --hero-min-h: 340px;
+    --about-hero-h: 40vh;  --about-hero-min-h: 280px;
+    --room-hero-h: 34vh;  --room-hero-min-h: 220px;  --room-hero-px: 16px;
+    --map-h: 300px;
+  }
+}
+
+/* ============================================================================
+   LAYOUT — kitne columns, kab 1 column, padding classes
+   ============================================================================ */
+
+/* ---- Padding helper classes (sizes upar tokens se aate hain) ---- */
+.section-pad   { padding: var(--section-py) var(--section-px); }
+.page-header   { padding: var(--header-py) var(--section-px); text-align: center; }
+.strip-pad     { padding: var(--strip-py) var(--section-px); }
+.list-pad      { padding: 32px var(--section-px) var(--section-py); }
+.filter-bar    { padding: var(--filter-pt) var(--section-px) 10px; text-align: center; }
+.pad-md        { padding: var(--pad-md-y) var(--pad-md-x); }
+.pad-detail    { padding: var(--detail-py) var(--section-px); }
+.pad-x         { padding-left: var(--section-px); padding-right: var(--section-px); }
+.footer-pad    { padding: var(--footer-py) var(--section-px) 32px; }
+.section-head  { text-align: center; margin-bottom: var(--head-mb); }
+.card-pad      { padding: var(--card-pad); }
+.form-card     { padding: var(--card-pad-lg); }
+.chip          { padding: var(--chip-pad); }
+.infobox       { padding: var(--infobox-pad); }
+.amenity-card  { padding: var(--amenity-pad); }
+.quick-book-box{ padding: var(--qb-pad); }
+
+/* ---- Hero / banners / map ---- */
+.hero-container { position: relative; height: var(--hero-h); min-height: var(--hero-min-h); margin-top: var(--hero-mt); overflow: hidden; }
+.about-hero     { position: relative; height: var(--about-hero-h); min-height: var(--about-hero-min-h); }
+.room-hero      { position: relative; height: var(--room-hero-h); min-height: var(--room-hero-min-h); }
+.room-hero-title{ padding: 0 var(--room-hero-px); }
+.map-box        { height: var(--map-h); }
+.welcome-img    { aspect-ratio: var(--welcome-ratio); }
+.dining-img     { aspect-ratio: var(--dining-ratio); }
+
+/* ---- 2 columns (Dining, Location, About, Amenities rows) ---- */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); align-items: center; }
+
+/* ---- Home: quick-book bar  (desktop 4 | tablet 2x2 | mobile 1) ---- */
+.quick-book-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: end; }
+
+/* ---- Home: featured rooms (desktop 3 columns | tablet+mobile swipe) ---- */
+.featured-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-md); }
+
+/* ---- Home: amenities strip (desktop 3 | tablet 3 | mobile 2) ---- */
+.amenity-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+/* ---- Home: reviews carousel (desktop 3 cards | tablet 2 | mobile swipe 85%) ---- */
+.review-carousel { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 10px 4px 16px; width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.review-carousel::-webkit-scrollbar { display: none; }
+.review-card { flex: 0 0 calc((100% - 48px) / 3); min-width: 0; box-sizing: border-box; scroll-snap-align: start; }
+
+/* ---- Rooms page (desktop 3 | tablet 2 | mobile 1) ---- */
+.rooms-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-md); }
+
+/* ---- Gallery page (desktop auto | tablet 3 | mobile 2) ---- */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+
+/* ---- About stats (desktop 3 | tablet 3 | mobile 1) ---- */
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* ---- Contact info cards (desktop 2x2 | tablet 2x2 | mobile 1) ---- */
+.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+/* ---- Amenities page: icon strip ---- */
+.icon-strip { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+
+/* ---- Room detail: content + sidebar (desktop 2 columns | tablet/mobile 1) ---- */
+.detail-split { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start; }
+.detail-aside { position: sticky; top: 100px; }
+.room-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.room-gallery-item { cursor: zoom-in; border-radius: 4px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--bg-placeholder); }
+.room-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.room-gallery-item:hover img { transform: scale(1.06); }
+
+/* ---- Footer (desktop 4 | tablet 2 | mobile 1) ---- */
+.footer-grid { max-width: 1100px; margin: 0 auto var(--footer-mb); display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--footer-gap); }
+
+/* ---- Reviews header ---- */
+.reviews-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* ============================================================================
+   TABLET  (≤ 1023px)
+   ============================================================================ */
+@media (max-width: 1023px) {
+  .quick-book-grid { grid-template-columns: repeat(2, 1fr); }
+  .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .review-card { flex: 0 0 calc((100% - 24px) / 2); }
+  .room-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Room detail: sidebar neeche, sticky band */
+  .detail-split { grid-template-columns: 1fr; gap: 28px; }
+  .detail-aside { position: static; }
+
+  /* Featured rooms: swipe row (cards ka aadha) */
+  .featured-grid {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    max-width: none; margin: 0 calc(var(--section-px) * -1);
+    padding: 0 var(--section-px) 20px; scroll-padding-left: var(--section-px);
+    scrollbar-width: none;
+  }
+  .featured-grid::-webkit-scrollbar { display: none; }
+  .featured-grid > * { flex: 0 0 46%; min-width: 0; scroll-snap-align: start; }
+}
+
+/* ============================================================================
+   MOBILE  (≤ 767px)
+   ============================================================================ */
+@media (max-width: 767px) {
+  .two-col { grid-template-columns: 1fr; }
+  .quick-book-grid { grid-template-columns: 1fr; gap: 14px; }
+  .rooms-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .amenity-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .icon-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  .hero-container { background: var(--bg-darker); }
+  .hero-slide { transform: none !important; }
+
+  .featured-grid > * { flex: 0 0 85%; scroll-snap-align: center; }
+
+  /* Reviews: ek card + agla card jhalakta hua (swipe) */
+  .review-carousel {
+    gap: 16px; margin: 0 calc(var(--section-px) * -1); width: auto;
+    padding: 10px var(--section-px) 20px; scroll-padding-left: var(--section-px);
+  }
+  .review-card { flex: 0 0 85%; scroll-snap-align: center; }
+  .desktop-arrows { display: none !important; }
+
+  /* Room gallery: swipe row */
+  .room-gallery-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 10px; }
+  .room-gallery-item { flex: 0 0 85%; scroll-snap-align: center; }
+
+  /* Touch-friendly: inputs 16px (iPhone zoom nahi karega), buttons 44px height */
+  input, select, textarea { font-size: 16px !important; }
+  .btn-gold, .btn-outline, .btn-whatsapp { min-height: 44px; }
+}

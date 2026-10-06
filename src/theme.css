@@ -1,0 +1,92 @@
+/* ============================================================================
+   src/theme.css — ⭐ COLOURS + FONTS (naye hotel ke liye yahan badlo) ⭐
+   Poori site ke saare colours yahin se aate hain. Yahan value badlo -> har jagah badal jata hai.
+   Har variable ke saath comment hai ke wo kahan use hota hai. Poora map: DESIGN-README.md
+   ============================================================================ */
+
+/* Fonts: naya font lagana ho to is link mein add karo aur neeche --font-* mein naam likho */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  /* ───────── FONTS ───────── */
+  --font-heading: 'Cormorant Garamond', serif;   /* saari headings, prices, hotel naam */
+  --font-sub:     'Playfair Display', serif;     /* (reserve) */
+  --font-body:    'Lato', sans-serif;            /* paragraphs, buttons, labels, forms */
+
+  /* ───────── BRAND / ACCENT COLOURS ───────── */
+  --gold:               #C4922A;   /* main gold: section labels, borders, active nav link, Book Now (navbar), gallery filter */
+  --gold-hover:         #A67520;   /* (reserve) gold hover */
+  --gold-bright:        #D9933D;   /* hero highlight word, hero line, contact page label */
+  --gold-line-a:        #C9922A;   /* thin divider line between home sections (edges) */
+  --gold-line-b:        #D9A84E;   /* thin divider line between home sections (centre) */
+  --gold-tint-bg:       rgba(196,146,42,0.12);  /* BookingWidget nights box */
+  --gold-tint-border:   rgba(196,146,42,0.3);   /* BookingWidget nights box border */
+  --accent:             #984A1C;   /* burnt-orange: main buttons (VIEW, Book, Check Availability), prices, room badge, ✦ icons */
+  --accent-hover:       #7A3B16;   /* room card VIEW button hover */
+  --accent-shadow:      rgba(152,74,28,0.2);    /* active filter button glow (Rooms page) */
+  --accent-tint:        #FBF3E6;   /* booking popup: AC badge + selection summary background */
+  --accent-tint-border: #E7D9BE;   /* booking popup: summary border/lines */
+  --submit:             #C49B66;   /* booking popup: Request Booking button + input focus */
+  --submit-disabled:    #C9B79A;   /* booking popup: button while submitting */
+  --whatsapp:           #25D366;   /* WhatsApp green: buttons, floating button, footer link */
+
+  /* ───────── BACKGROUNDS ───────── */
+  --bg-primary:     #F5EFE6;   /* page background: About, Amenities, Contact, Gallery, Rooms */
+  --bg-secondary:   #EDE0CE;   /* beige bands: About 2-column, amenities icon strip, image placeholders */
+  --bg-card:        #EEE5D6;   /* About stat boxes */
+  --bg-section:     #F9F6F0;   /* home alternate sections, room detail page, popups */
+  --bg-white:       #FFFFFF;   /* cards, white sections, inputs */
+  --bg-dark:        #2C1F14;   /* dark page headers/banners, CTA, contact form card */
+  --bg-darker:      #1C1209;   /* footer, hero (mobile) */
+  --bg-input:       #FDFBF7;   /* contact form inputs */
+  --bg-placeholder: #EFEFEF;   /* room gallery image placeholder */
+  --navbar-solid-bg: rgba(255,255,255,0.98);   /* navbar (scrolled) + mobile menu */
+
+  /* ───────── TEXT ───────── */
+  --text-main:         #1C1209;   /* headings, main dark text */
+  --text-dark:         #333333;   /* body text on white (room details, review text) */
+  --text-body:         #555555;   /* paragraphs on white (home) */
+  --text-muted:        #7A6652;   /* brown paragraphs (About, Amenities, room card meta) */
+  --text-soft:         #8C7B6B;   /* small grey-brown text, footer text, hints */
+  --text-white:        #FFFFFF;   /* text on dark/colored buttons */
+  --text-on-dark:      #F5EFE6;   /* cream text on dark backgrounds */
+  --text-on-dark-soft: #A89582;   /* soft text on dark (contact page) */
+  --text-hero-sub:     #FDFBF7;   /* hero subtitle */
+
+  /* ───────── BORDERS & DIVIDERS ───────── */
+  --border-tan:       #C8B49A;   /* tan borders: About stats, gallery images, widget inputs */
+  --border-soft:      #EAE1D5;   /* light borders on cards (amenities, reviews, contact, map) */
+  --border-grey:      #E5E5E5;   /* navbar bottom, room detail info boxes, inputs, inactive filter */
+  --border-input:     #E0D8C8;   /* booking popup inputs + room card separator */
+  --border-strong:    #1C1209;   /* room detail info box outline */
+  --border-dark-card: #3D2D1E;   /* contact form card outline */
+  --divider-soft:     #F0EBE1;   /* room card line above price */
+  --modal-border:     #EDE6D8;   /* booking popup: room box border */
+  --modal-row-border: #F1ECE1;   /* booking popup: line between rooms */
+  --footer-divider:   rgba(200,180,154,0.2);   /* footer bottom line */
+
+  /* ───────── OVERLAYS ───────── */
+  --overlay:            rgba(0,0,0,0.65);        /* dark background behind popups */
+  --overlay-about-hero: rgba(30,18,8,0.52);      /* About hero image darkening */
+  --overlay-room-hero:  rgba(0,0,0,0.3);         /* Room detail hero darkening */
+  --overlay-caption:    rgba(30,18,8,0.75);      /* gallery hover caption gradient */
+  --lightbox-bg:        rgba(18,10,4,0.97);      /* full-screen photo viewer background */
+  --lightbox-caption:   #EDE0CE;                 /* photo viewer caption */
+  --lightbox-dot:       rgba(245,239,230,0.3);   /* photo viewer inactive dots */
+
+  /* ───────── STATUS / ERRORS ───────── */
+  --error-soft:   #e07070;   /* BookingWidget error */
+  --error-text:   #721C24;   /* booking popup error text */
+  --error-bg:     #F8D7DA;   /* booking popup error box */
+  --error-border: #F5C6CB;   /* booking popup error box border */
+  --stock-alert:  #C0392B;   /* "Max Available" red text */
+
+  /* ───────── REVIEWS (Booking.com style) ───────── */
+  --booking-blue:      #003b95;   /* stars + "B." badge */
+  --booking-verified:  #0096d6;   /* ✓ Verified text */
+  --review-sub:        #666666;   /* reviews header subtitle */
+  --review-meta:       #777777;   /* reviewer country line */
+  --review-date:       #999999;   /* review date */
+  --review-quote-mark: #D8D0C4;   /* big ” mark */
+  --review-divider:    #EFE7DB;   /* line above "Read original" */
+}
